@@ -3,7 +3,7 @@
     <strong>
       <AppEditable
         :value="invoice.bank_name"
-        v-b-modal.bank_account_no
+        v-b-modal.mpesa_details
         :errors="errors"
         :disabled="true"
         field="bank_name"
@@ -13,7 +13,7 @@
     </strong>
     <AppEditable
       :value="invoice.bank_account_no"
-      v-b-modal.bank_account_no
+      v-b-modal.mpesa_details
       :errors="errors"
       :disabled="true"
       field="bank_account_no"
@@ -21,29 +21,29 @@
       class="break-line"
     />
     <BModal
-      id="bank_account_no"
+      id="mpesa_details"
       centered
-      :title="$t('bank_account_modal_title')"
+      :title="$t('bank_mpesa_modal_title')"
       hide-footer
       size="lg"
       content-class="bg-base dp--24"
     >
-      <BankAccountsList @select="accountSelected" />
+      <MpesaAccountsList @select="accountSelected" />
     </BModal>
   </div>
 </template>
 <script>
 import { BModal, VBModal } from "bootstrap-vue";
-import BankAccountsList from "@/components/bank-accounts/BankAccountsList";
+import MpesaAccountsList from "@/components/mpesa-accounts/MpesaAccountsList";
 import AppEditable from "@/components/form/AppEditable";
 
 export default {
-  i18nOptions: { namespaces: "invoice-bank-details" },
+  i18nOptions: { namespaces: "invoice-mpesa-details" },
   props: ["invoice", "errors"],
   components: {
     AppEditable,
     BModal,
-    BankAccountsList
+    MpesaAccountsList
   },
   directives: {
     "b-modal": VBModal
