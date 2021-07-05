@@ -1,13 +1,18 @@
-import 'es6-promise';
-import '@/config/storage.config';
-import { BVModalPlugin } from 'bootstrap-vue';
-import Vue from 'vue';
-import App from '@/App.vue';
-import router from '@/router';
-import store from '@/store/store';
-import VueNotifications from 'vue-notification';
-import './registerServiceWorker';
-import i18n from './config/i18n.config';
+import "es6-promise";
+import "@/config/storage.config";
+import { BVModalPlugin } from "bootstrap-vue";
+import Vue from "vue";
+import App from "@/App.vue";
+import router from "@/router";
+import store from "@/store/store";
+import VueNotifications from "vue-notification";
+import "./registerServiceWorker";
+import "@aws-amplify/ui-vue";
+import Amplify, { Auth } from "aws-amplify";
+import awsconfig from "./aws-exports";
+import i18n from "./config/i18n.config";
+
+Amplify.configure(awsconfig);
 
 Vue.use(BVModalPlugin);
 Vue.use(VueNotifications);
@@ -18,7 +23,7 @@ const app = new Vue({
   router,
   store,
   i18n,
-  render: h => h(App),
-}).$mount('#app');
+  render: h => h(App)
+}).$mount("#app");
 
 export default app;

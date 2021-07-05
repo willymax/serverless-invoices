@@ -1,0 +1,10 @@
+{
+  "auth": {
+    "serverlessinvoices737e8bbe": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false
+    }
+  }
+}
