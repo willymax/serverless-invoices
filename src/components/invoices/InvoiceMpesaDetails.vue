@@ -12,12 +12,12 @@
       />
     </strong>
     <AppEditable
-      :value="invoice.bank_account_no"
+      :value="invoice.paybill_and_buygoods_no"
       v-b-modal.mpesa_details
       :errors="errors"
       :disabled="true"
-      field="bank_account_no"
-      :placeholder="$t('bank_account_no')"
+      field="paybill_and_buygoods_no"
+      :placeholder="$t('paybill_and_buygoods_no')"
       class="break-line"
     />
     <BModal

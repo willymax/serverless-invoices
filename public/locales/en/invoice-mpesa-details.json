@@ -1,5 +1,6 @@
 {
   "bank_name": "Add bank",
   "bank_account_no": "Add bank details",
+  "paybill_and_buygoods_no": "Paybill or Buygoods",
   "bank_mpesa_modal_title": "Choose mpesa details"
 }
