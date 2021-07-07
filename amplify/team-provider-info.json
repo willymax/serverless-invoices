@@ -1,19 +1,19 @@
 {
   "dev": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-serverlessinvoices-dev-173424-authRole",
-      "UnauthRoleArn": "arn:aws:iam::860548423055:role/amplify-serverlessinvoices-dev-173424-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::860548423055:role/amplify-serverlessinvoices-dev-173424-authRole",
+      "AuthRoleName": "amplify-serverlessinvoices-dev-201049-authRole",
+      "UnauthRoleArn": "arn:aws:iam::860548423055:role/amplify-serverlessinvoices-dev-201049-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::860548423055:role/amplify-serverlessinvoices-dev-201049-authRole",
       "Region": "us-east-2",
-      "DeploymentBucketName": "amplify-serverlessinvoices-dev-173424-deployment",
-      "UnauthRoleName": "amplify-serverlessinvoices-dev-173424-unauthRole",
-      "StackName": "amplify-serverlessinvoices-dev-173424",
-      "StackId": "arn:aws:cloudformation:us-east-2:860548423055:stack/amplify-serverlessinvoices-dev-173424/1cd42ad0-dd9e-11eb-9f61-0234c326033e",
-      "AmplifyAppId": "dad68l3tn6yig"
+      "DeploymentBucketName": "amplify-serverlessinvoices-dev-201049-deployment",
+      "UnauthRoleName": "amplify-serverlessinvoices-dev-201049-unauthRole",
+      "StackName": "amplify-serverlessinvoices-dev-201049",
+      "StackId": "arn:aws:cloudformation:us-east-2:860548423055:stack/amplify-serverlessinvoices-dev-201049/f7f00980-ddb3-11eb-82a1-0230bd8e0e32",
+      "AmplifyAppId": "d34adwl60fptfb"
     },
     "categories": {
       "auth": {
-        "serverlessinvoices737e8bbe": {}
+        "serverlessinvoices9381a3d1": {}
       }
     }
   }
