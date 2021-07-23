@@ -18,3 +18,11 @@ type Comment @model @key(name: "byPost", fields: ["postID", "content"]) {
   post: Post @connection(fields: ["postID"])
   content: String!
 }
+type BankAccount @model {
+  id: ID!
+  user: String
+  bank_name: String!
+  account_no: String!
+  updated_at: String!
+  created_at: String!
+}

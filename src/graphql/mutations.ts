@@ -344,3 +344,63 @@ export const deleteComment = /* GraphQL */ `
     }
   }
 `;
+export const createBankAccount = /* GraphQL */ `
+  mutation CreateBankAccount(
+    $input: CreateBankAccountInput!
+    $condition: ModelBankAccountConditionInput
+  ) {
+    createBankAccount(input: $input, condition: $condition) {
+      id
+      user
+      bank_name
+      account_no
+      updated_at
+      created_at
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const updateBankAccount = /* GraphQL */ `
+  mutation UpdateBankAccount(
+    $input: UpdateBankAccountInput!
+    $condition: ModelBankAccountConditionInput
+  ) {
+    updateBankAccount(input: $input, condition: $condition) {
+      id
+      user
+      bank_name
+      account_no
+      updated_at
+      created_at
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deleteBankAccount = /* GraphQL */ `
+  mutation DeleteBankAccount(
+    $input: DeleteBankAccountInput!
+    $condition: ModelBankAccountConditionInput
+  ) {
+    deleteBankAccount(input: $input, condition: $condition) {
+      id
+      user
+      bank_name
+      account_no
+      updated_at
+      created_at
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+  }
+`;

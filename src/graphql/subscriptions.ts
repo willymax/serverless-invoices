@@ -317,3 +317,54 @@ export const onDeleteComment = /* GraphQL */ `
     }
   }
 `;
+export const onCreateBankAccount = /* GraphQL */ `
+  subscription OnCreateBankAccount {
+    onCreateBankAccount {
+      id
+      user
+      bank_name
+      account_no
+      updated_at
+      created_at
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onUpdateBankAccount = /* GraphQL */ `
+  subscription OnUpdateBankAccount {
+    onUpdateBankAccount {
+      id
+      user
+      bank_name
+      account_no
+      updated_at
+      created_at
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onDeleteBankAccount = /* GraphQL */ `
+  subscription OnDeleteBankAccount {
+    onDeleteBankAccount {
+      id
+      user
+      bank_name
+      account_no
+      updated_at
+      created_at
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+  }
+`;

@@ -189,6 +189,57 @@ export type DeleteCommentInput = {
   _version?: number | null,
 };
 
+export type CreateBankAccountInput = {
+  id?: string | null,
+  user?: string | null,
+  bank_name: string,
+  account_no: string,
+  updated_at: string,
+  created_at: string,
+  _version?: number | null,
+};
+
+export type ModelBankAccountConditionInput = {
+  user?: ModelStringInput | null,
+  bank_name?: ModelStringInput | null,
+  account_no?: ModelStringInput | null,
+  updated_at?: ModelStringInput | null,
+  created_at?: ModelStringInput | null,
+  and?: Array< ModelBankAccountConditionInput | null > | null,
+  or?: Array< ModelBankAccountConditionInput | null > | null,
+  not?: ModelBankAccountConditionInput | null,
+};
+
+export type BankAccount = {
+  __typename: "BankAccount",
+  id: string,
+  user?: string | null,
+  bank_name: string,
+  account_no: string,
+  updated_at: string,
+  created_at: string,
+  _version: number,
+  _deleted?: boolean | null,
+  _lastChangedAt: number,
+  createdAt: string,
+  updatedAt: string,
+};
+
+export type UpdateBankAccountInput = {
+  id: string,
+  user?: string | null,
+  bank_name?: string | null,
+  account_no?: string | null,
+  updated_at?: string | null,
+  created_at?: string | null,
+  _version?: number | null,
+};
+
+export type DeleteBankAccountInput = {
+  id: string,
+  _version?: number | null,
+};
+
 export type ModelBlogFilterInput = {
   id?: ModelIDInput | null,
   name?: ModelStringInput | null,
@@ -220,6 +271,25 @@ export type ModelCommentFilterInput = {
   and?: Array< ModelCommentFilterInput | null > | null,
   or?: Array< ModelCommentFilterInput | null > | null,
   not?: ModelCommentFilterInput | null,
+};
+
+export type ModelBankAccountFilterInput = {
+  id?: ModelIDInput | null,
+  user?: ModelStringInput | null,
+  bank_name?: ModelStringInput | null,
+  account_no?: ModelStringInput | null,
+  updated_at?: ModelStringInput | null,
+  created_at?: ModelStringInput | null,
+  and?: Array< ModelBankAccountFilterInput | null > | null,
+  or?: Array< ModelBankAccountFilterInput | null > | null,
+  not?: ModelBankAccountFilterInput | null,
+};
+
+export type ModelBankAccountConnection = {
+  __typename: "ModelBankAccountConnection",
+  items?:  Array<BankAccount | null > | null,
+  nextToken?: string | null,
+  startedAt?: number | null,
 };
 
 export type CreateBlogMutationVariables = {
@@ -609,6 +679,72 @@ export type DeleteCommentMutation = {
   } | null,
 };
 
+export type CreateBankAccountMutationVariables = {
+  input: CreateBankAccountInput,
+  condition?: ModelBankAccountConditionInput | null,
+};
+
+export type CreateBankAccountMutation = {
+  createBankAccount?:  {
+    __typename: "BankAccount",
+    id: string,
+    user?: string | null,
+    bank_name: string,
+    account_no: string,
+    updated_at: string,
+    created_at: string,
+    _version: number,
+    _deleted?: boolean | null,
+    _lastChangedAt: number,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type UpdateBankAccountMutationVariables = {
+  input: UpdateBankAccountInput,
+  condition?: ModelBankAccountConditionInput | null,
+};
+
+export type UpdateBankAccountMutation = {
+  updateBankAccount?:  {
+    __typename: "BankAccount",
+    id: string,
+    user?: string | null,
+    bank_name: string,
+    account_no: string,
+    updated_at: string,
+    created_at: string,
+    _version: number,
+    _deleted?: boolean | null,
+    _lastChangedAt: number,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type DeleteBankAccountMutationVariables = {
+  input: DeleteBankAccountInput,
+  condition?: ModelBankAccountConditionInput | null,
+};
+
+export type DeleteBankAccountMutation = {
+  deleteBankAccount?:  {
+    __typename: "BankAccount",
+    id: string,
+    user?: string | null,
+    bank_name: string,
+    account_no: string,
+    updated_at: string,
+    created_at: string,
+    _version: number,
+    _deleted?: boolean | null,
+    _lastChangedAt: number,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
 export type SyncBlogsQueryVariables = {
   filter?: ModelBlogFilterInput | null,
   limit?: number | null,
@@ -937,6 +1073,84 @@ export type ListCommentsQuery = {
         updatedAt: string,
       } | null,
       content: string,
+      _version: number,
+      _deleted?: boolean | null,
+      _lastChangedAt: number,
+      createdAt: string,
+      updatedAt: string,
+    } | null > | null,
+    nextToken?: string | null,
+    startedAt?: number | null,
+  } | null,
+};
+
+export type SyncBankAccountsQueryVariables = {
+  filter?: ModelBankAccountFilterInput | null,
+  limit?: number | null,
+  nextToken?: string | null,
+  lastSync?: number | null,
+};
+
+export type SyncBankAccountsQuery = {
+  syncBankAccounts?:  {
+    __typename: "ModelBankAccountConnection",
+    items?:  Array< {
+      __typename: "BankAccount",
+      id: string,
+      user?: string | null,
+      bank_name: string,
+      account_no: string,
+      updated_at: string,
+      created_at: string,
+      _version: number,
+      _deleted?: boolean | null,
+      _lastChangedAt: number,
+      createdAt: string,
+      updatedAt: string,
+    } | null > | null,
+    nextToken?: string | null,
+    startedAt?: number | null,
+  } | null,
+};
+
+export type GetBankAccountQueryVariables = {
+  id: string,
+};
+
+export type GetBankAccountQuery = {
+  getBankAccount?:  {
+    __typename: "BankAccount",
+    id: string,
+    user?: string | null,
+    bank_name: string,
+    account_no: string,
+    updated_at: string,
+    created_at: string,
+    _version: number,
+    _deleted?: boolean | null,
+    _lastChangedAt: number,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type ListBankAccountsQueryVariables = {
+  filter?: ModelBankAccountFilterInput | null,
+  limit?: number | null,
+  nextToken?: string | null,
+};
+
+export type ListBankAccountsQuery = {
+  listBankAccounts?:  {
+    __typename: "ModelBankAccountConnection",
+    items?:  Array< {
+      __typename: "BankAccount",
+      id: string,
+      user?: string | null,
+      bank_name: string,
+      account_no: string,
+      updated_at: string,
+      created_at: string,
       _version: number,
       _deleted?: boolean | null,
       _lastChangedAt: number,
@@ -1282,6 +1496,57 @@ export type OnDeleteCommentSubscription = {
       updatedAt: string,
     } | null,
     content: string,
+    _version: number,
+    _deleted?: boolean | null,
+    _lastChangedAt: number,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type OnCreateBankAccountSubscription = {
+  onCreateBankAccount?:  {
+    __typename: "BankAccount",
+    id: string,
+    user?: string | null,
+    bank_name: string,
+    account_no: string,
+    updated_at: string,
+    created_at: string,
+    _version: number,
+    _deleted?: boolean | null,
+    _lastChangedAt: number,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type OnUpdateBankAccountSubscription = {
+  onUpdateBankAccount?:  {
+    __typename: "BankAccount",
+    id: string,
+    user?: string | null,
+    bank_name: string,
+    account_no: string,
+    updated_at: string,
+    created_at: string,
+    _version: number,
+    _deleted?: boolean | null,
+    _lastChangedAt: number,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type OnDeleteBankAccountSubscription = {
+  onDeleteBankAccount?:  {
+    __typename: "BankAccount",
+    id: string,
+    user?: string | null,
+    bank_name: string,
+    account_no: string,
+    updated_at: string,
+    created_at: string,
     _version: number,
     _deleted?: boolean | null,
     _lastChangedAt: number,

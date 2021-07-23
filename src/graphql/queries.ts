@@ -309,3 +309,76 @@ export const listComments = /* GraphQL */ `
     }
   }
 `;
+export const syncBankAccounts = /* GraphQL */ `
+  query SyncBankAccounts(
+    $filter: ModelBankAccountFilterInput
+    $limit: Int
+    $nextToken: String
+    $lastSync: AWSTimestamp
+  ) {
+    syncBankAccounts(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+      lastSync: $lastSync
+    ) {
+      items {
+        id
+        user
+        bank_name
+        account_no
+        updated_at
+        created_at
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
+export const getBankAccount = /* GraphQL */ `
+  query GetBankAccount($id: ID!) {
+    getBankAccount(id: $id) {
+      id
+      user
+      bank_name
+      account_no
+      updated_at
+      created_at
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listBankAccounts = /* GraphQL */ `
+  query ListBankAccounts(
+    $filter: ModelBankAccountFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listBankAccounts(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        user
+        bank_name
+        account_no
+        updated_at
+        created_at
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;

@@ -34,3 +34,16 @@ export declare class Comment {
   constructor(init: ModelInit<Comment>);
   static copyOf(source: Comment, mutator: (draft: MutableModel<Comment>) => MutableModel<Comment> | void): Comment;
 }
+
+export declare class BankAccount {
+  readonly id: string;
+  readonly user?: string;
+  readonly bank_name: string;
+  readonly account_no: string;
+  readonly updated_at: string;
+  readonly created_at: string;
+  readonly createdAt?: string;
+  readonly updatedAt?: string;
+  constructor(init: ModelInit<BankAccount>);
+  static copyOf(source: BankAccount, mutator: (draft: MutableModel<BankAccount>) => MutableModel<BankAccount> | void): BankAccount;
+}
