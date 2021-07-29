@@ -7,16 +7,22 @@
 <script>
 import { AuthState, onAuthUIStateChange } from '@aws-amplify/ui-components'
 import { DataStore, Predicates } from '@aws-amplify/datastore'
-import { BankAccount } from '@/models'
+// import { BankAccount } from '@/models'
 
 export default {
+    name: 'DataStore',
     data() {
         return {
-            key: 0,
+            testName: 'Invoice App',
         }
     },
     components: {
-        BankAccount,
+        // BankAccount,
+    },
+    methods: {
+        name() {
+            console.log('Name')
+        },
     },
 }
 </script>

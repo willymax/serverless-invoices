@@ -27,6 +27,7 @@ module.exports = {
         indent: 'off',
         semi: 'off',
         'no-unused-vars': 'warn',
+        'operator-linebreak': 'off',
         'arrow-parens': 'warn',
         quotes: ['off', 'single'],
         'comma-dangle': ['off', 'never'],

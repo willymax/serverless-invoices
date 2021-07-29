@@ -13,15 +13,37 @@
 </template>
 
 <script>
+import { AuthState, onAuthUIStateChange } from '@aws-amplify/ui-components'
+import NotificationService from '@/services/notification.service'
+
 export default {
     name: 'app',
     created() {
         this.pauseAnimationsUntilLoaded()
+        // authentication state management
+        onAuthUIStateChange((state, user) => {
+            console.log('onAuthUIStateChange called')
+            // set current user and load data after login
+            switch (state) {
+                case AuthState.SignedIn: {
+                    this.user = user
+                    const { username } = user
+                    this.$log.info(username)
+                    let props = { id: username }
+                    this.$store
+                        .dispatch('users/createUser', props)
+                        .then(() => {
+                            NotificationService.success(this.$t('notification_updated'))
+                        })
+                        .catch(err => this.errors.set(err.errors))
+                    this.loadMessages()
+                    break
+                }
+            }
+        })
     },
     data() {
-        return {
-            testName: 'Invoice App',
-        }
+        return {}
     },
     mounted() {
         this.initColorScheme()

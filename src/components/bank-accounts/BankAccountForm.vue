@@ -53,13 +53,17 @@ import NotificationService from '@/services/notification.service'
 import AppInput from '@/components/form/AppInput'
 import DataStore from '@/components/DataStore'
 import AppTextarea from '@/components/form/AppTextarea'
+import { dataStoreMixin } from '@/mixins/DataStoreMixin.js'
 import Errors from '@/utils/errors'
 
 export default {
+    mixins: [dataStoreMixin],
     i18nOptions: { namespaces: 'bank-account-form' },
+    name: 'BankAccountForm',
     components: {
         AppInput,
         AppTextarea,
+        DataStore,
     },
     data() {
         return {
@@ -92,7 +96,7 @@ export default {
         createBankAccount() {
             this.loading = true
             this.errors.clear()
-
+            this.getUser()
             return this.$store
                 .dispatch('bankAccounts/createNewBankAccount', this.bankAccount)
                 .then(bankAccount => {
@@ -109,6 +113,7 @@ export default {
                 })
         },
     },
+    created() {},
     mounted() {
         console.log(this.$parent.testName)
     },
